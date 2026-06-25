@@ -49,7 +49,7 @@ if (currentPage === "registration.html") {
 }
 
 // Login Page
-if (currentPage === "login.html") {
+if (currentPage === "index.html") {
 
     const loginForm = document.getElementById("loginForm");
 
