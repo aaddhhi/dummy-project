@@ -1,7 +1,7 @@
 let allProducts = [];
 
 
-const currentPage = window.location.pathname.split("/").pop();
+const currentPage = window.location.pathname.split("/").pop()||"index.html";
 
 // Registration Page
 if (currentPage === "registration.html") {
@@ -43,7 +43,7 @@ if (currentPage === "registration.html") {
 
         alert("Registration Successful!");
 
-        window.location.href = "login.html";
+        window.location.href = "index.html";
 
     });
 }
@@ -103,7 +103,7 @@ if (currentPage === "home.html") {
     // If user is not logged in
     if (!loggedInEmail) {
         alert("Please Login First");
-        window.location.href = "login.html";
+        window.location.href = "index.html.html";
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -221,6 +221,7 @@ function updateCartCount() {
 }
 const searchInput = document.getElementById("searchInput");
 
+if(searchInput){
 searchInput.addEventListener("input", function () {
 
     const searchValue = this.value.toLowerCase();
@@ -232,3 +233,4 @@ searchInput.addEventListener("input", function () {
 
     displayProducts(filteredProducts);
 });
+}
