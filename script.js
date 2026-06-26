@@ -213,6 +213,19 @@ function displayProducts(products) {
 
 }
 
+function showToast(message, type = "success") {
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.className = `toast show ${type}`;
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+
 //add to cart
 function addToCart(productId) {
 
@@ -230,7 +243,7 @@ function addToCart(productId) {
 
         existingProduct.quantity += 1;
 
-        alert("Product quantity updated!");
+        showToast("🔄 Cart quantity updated!");
 
     } else {
 
@@ -238,7 +251,7 @@ function addToCart(productId) {
 
         cart.push(product);
 
-        alert("Product added to cart!");
+        showToast("🛒 Product added to cart!", "success");
 
     }
 
